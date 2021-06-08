@@ -1,6 +1,4 @@
-## M03 demo01
-
-#### Azure Portal
+### Demo: Add a policy to Azure Blob storage
 
 ![image1](images/image1.png)
 
@@ -8,10 +6,5 @@
 
 ![image3](images/image3.png)
 
-#### Cloud Shell
-
 ![image4](images/image4.png)
 
-![image5](images/image5.png)
-
-![image6](images/image6.png)

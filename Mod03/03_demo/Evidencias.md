@@ -1,5 +1,4 @@
-## Demo: Create a Web App by using the Azure Portal
-#### Create a web app
+### Demo: Using the Azure Blob storage client library for .NET v11
 
 ![image1](images/image1.png)
 
@@ -15,3 +14,6 @@
 
 ![image7](images/image7.png)
 
+![image8](images/image8.png)
+
+![image9](images/image9.png)

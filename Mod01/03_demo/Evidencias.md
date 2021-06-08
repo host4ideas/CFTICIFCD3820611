@@ -1,8 +1,10 @@
-![image1](Images/image1.png)
+### Demo: Create a Web App with a local Git deployment source
 
-![image2](Images/image2.png)
+![image1](images/image1.png)
 
-![image3](Images/image3.png)
+![image2](images/image2.png)
 
-![image4](Images/image4.png)
+![image3](images/image3.png)
+
+![image4](images/image4.png)
 

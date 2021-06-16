@@ -16,7 +16,10 @@ This demo is performed in the Cloud Shell.
 
 1. Choose to either:
    - Launch the Cloud Shell: [https://shell.azure.com](https://shell.azure.com/)
+   
    - Or, login to the [Azure portal](https://portal.azure.com/) and open open the cloud shell there.
+   
+     ![image1](images/image1.png)
 
 #### Create an APIM instance
 
@@ -27,10 +30,16 @@ This demo is performed in the Cloud Shell.
    az group create -n az204-apim-rg -l $myLocation
    ```
 
+   ![image2](images/image2.png)
+
+   ![image3](images/image3.png)
+
    
 
 2. Create an APIM instance. The name of your APIM instance needs to be unique. The first line in the example below generates a unique name. You also need to supply an email address.
 
+   
+   
    ```powershell
    $myEmail = Read-Host -Prompt "Enter an email address: "
    $myAPIMname="az204-apim-" + $(get-random -minimum 10000 -maximum 100000)
@@ -40,7 +49,11 @@ This demo is performed in the Cloud Shell.
        --publisher-name AZ204-APIM-Demo `
        --sku-name Consumption
    ```
-
    
-
+   ![image4](images/image4.png)
+   
+   ![image5](images/image5.png)
+   
+   
+   
    ✔️ **Note:** Azure will send a notification to the email addres supplied above when the resource has been provisioned.

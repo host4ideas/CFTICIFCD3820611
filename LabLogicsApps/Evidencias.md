@@ -16,41 +16,9 @@ Microsoft updates this training course when the community brings needed changes 
 
 ## Instructions
 
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Sign in to your Windows 10 virtual machine (VM) by using the following credentials:
-    
--   Username: **Admin**
-
--   Password: **Pa55w.rd**
-
-> **Note**: Instructions to connect to the virtual lab environment will be provided by your instructor.
-
-#### Review the installed applications
-
-Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for the applications that you'll use in this lab:
-    
--   Microsoft Edge
-
--   File Explorer
-
--   Windows Terminal
-
 ### Exercise 1: Create Azure resources
 
 #### Task 1: Open the Azure portal
-
-1.  On the taskbar, select the **Microsoft Edge** icon.
-
-1.  In the open browser window, go to the Azure portal (<https://portal.azure.com>).
-
-1.  Enter the email address for your Microsoft account, and then select **Next**.
-
-1.  Enter the password for your Microsoft account, and then select **Sign in**.
-
-    > **Note**: If this is your first time signing in to the Azure portal, you'll be offered a tour of the portal. Select **Get Started** to skip the tour.
 
 #### Task 2: Create an API Management resource
 
@@ -81,6 +49,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     1.  In the **Pricing tier** list, select **Consumption (99.9 SLA, %)**, and then select **Create**.
     
     > **Note**: Wait for Azure to finish creating the API Management resource prior to moving on in the lab. You will receive a notification when the resource is created.
+
+![image1](images/image1.png)
 
 #### Task 3: Create a Logic App resource
 
@@ -120,6 +90,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
     > **Note**: Wait for Azure to finish creating the Logic Apps resource prior to moving on in the lab. You will receive a notification when the resource is created.
 
+![image2](images/image2.png)
+
 #### Task 4: Create a storage account
 
 1.  In the Azure portal navigation pane, select **All services**.
@@ -158,6 +130,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
     > **Note**: On the **Deployment** blade, wait for the creation task to complete before moving on in this lab.
 
+![image4](images/image4.png)
+
 #### Task 5: Upload sample content to Azure Files
 
 1.  In the Azure portal navigation pane, select the **Resource groups** link.
@@ -168,7 +142,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  On the **Storage account** blade, in the **File service** section, select the **File shares** link.
 
-1.  In the **File shares** section, select **+ File share**.
+1. In the **File shares** section, select **+ File share**.
+
+   ![image4](images/image4.png)
 
 1.  In the **File share** pop-up dialog box, perform the following actions:
     
@@ -202,6 +178,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     
     > **Note**: Wait for the blob to upload before you continue with this lab.
 
+![image5](images/image5.png)
+
 #### Review
 
 In this exercise, you created all the resources that you'll use for this lab.
@@ -210,13 +188,15 @@ In this exercise, you created all the resources that you'll use for this lab.
 
 #### Task 1: Create a trigger for the workflow
 
-1.  In the Azure portal navigation pane, select **Resource groups**.
+1. In the Azure portal navigation pane, select **Resource groups**.
 
-1.  On the **Resource groups** blade, select the **AutomatedWorkflow** resource group that you created earlier in this lab.
+1. On the **Resource groups** blade, select the **AutomatedWorkflow** resource group that you created earlier in this lab.
 
-1.  On the **AutomatedWorkflow** blade, select the **prodflow*[yourname]*** logic app that you created earlier in this lab.
+1. On the **AutomatedWorkflow** blade, select the **prodflow*[yourname]*** logic app that you created earlier in this lab.
 
-1.  On the **Logic Apps Designer** blade, select the **Blank Logic App** template.
+1. On the **Logic Apps Designer** blade, select the **Blank Logic App** template.
+
+   ![image6](images/image6.png)
 
 1.  In the **Designer** area, perform the following actions to add a **When a HTTP request is received (Request)** trigger:
     
@@ -228,9 +208,11 @@ In this exercise, you created all the resources that you'll use for this lab.
 
 1.  In the **When a HTTP request is received** area, perform the following actions to configure the **When a HTTP request is received (Request)** trigger:
     
-    1.  In the **Add new parameter** list, select **Method**.
+    1. In the **Add new parameter** list, select **Method**.
 
-    1.  In the **Method** list, select **GET**.
+    1. In the **Method** list, select **GET**.
+    
+       ![image7](images/image7.png)
 
 #### Task 2: Create an action to query Azure Storage file shares
 
@@ -248,9 +230,13 @@ In this exercise, you created all the resources that you'll use for this lab.
     
     1.  Wait for the connector resource to finish creating.
 
+        ![image8](images/image8.png)
+        
         > **Note**: These resources take one to five minutes to create.
-
+    
 1. In the **List files** area, in the **Folder** text box, enter **/metadata**.
+
+   ![image9](images/image9.png)
 #### Task 3: Create an action to project list item properties
 
 1.  In the **Designer** area, select **+ New step**.
@@ -258,18 +244,20 @@ In this exercise, you created all the resources that you'll use for this lab.
 1.  In the **Designer** area, perform the following actions to add an **Select (Data Operations)** action:
     
     1.  In the **Search connectors and triggers** field, enter **select**.
-    
     1.  In the category list, select **Data Operations**.
-    
     1.  In the **Actions** result list, select **Select**.
-
+    
 1.  In the **Select** area, perform the following actions to configure the **Select (Data Operations)** action:
     
-    1.  In the **From** field, in the **Dynamic content** list, within the **List files** category, select **value**. 
+    1. In the **From** field, in the **Dynamic content** list, within the **List files** category, select **value**. 
     
-    1.  In the **Map** field, select **Switch to text mode**.
+    1. In the **Map** field, select **Switch to text mode**.
 
-    1.  In the **Map** field, in the **Dynamic content** list, within the **List files** category, select **Name**.
+       ![image10](images/image10.png)
+    
+    1. In the **Map** field, in the **Dynamic content** list, within the **List files** category, select **Name**.
+    
+       ![image11](images/image11.png)
 #### Task 4: Build an HTTP response action
 
 1.  In the **Designer** area, select **+ New step**, and then perform the following actions to add a **Response (Request)** action:
@@ -284,7 +272,9 @@ In this exercise, you created all the resources that you'll use for this lab.
 
     1.  On the **Body** field, in the **Dynamic content** list, within the **Select** category, select **Output**.
 
-1.  In the **Designer** area, select **Save**.
+1. In the **Designer** area, select **Save**.
+
+   ![image12](images/image12.png)
 
 #### Review
 
@@ -302,7 +292,9 @@ In this exercise, you built a basic workflow that starts when it's triggered by 
 
 1.  From the **API Management Service** blade, in the **API Management** section, select **APIs**.
 
-1.  In the **Add a new API** section, select **Logic App**.
+1. In the **Add a new API** section, select **Logic App**.
+
+   ![image13](images/image13.png)
 
 1.  In the **Create from Logic App** dialog box, perform the following actions:
 
@@ -322,21 +314,27 @@ In this exercise, you built a basic workflow that starts when it's triggered by 
 
     > **Note**: Wait for the new API to finish being created.
 
+![image14](images/image14.png)
+
 #### Task 2: Test the API operation
 
-1.  From the **Design** tab, select **Test**.
+1. From the **Design** tab, select **Test**.
 
-1.  On the **Test** tab, perform the following actions:
+1. On the **Test** tab, perform the following actions:
 
-    1.  Select the single **GET** operation.
+   1. Select the single **GET** operation.
 
-    1.  Copy the value of the **Request URL** field. (You will use this value later in the lab.)
+   1. Copy the value of the **Request URL** field. (You will use this value later in the lab.)
 
-    1.  Select **Send**.
+      ![image15](images/image15.png)
 
-    1.  In the **HTTP response** section, observe the JSON results of the test request.
+   1. Select **Send**.
 
-1.	Return to your browser window with the Azure portal.
+   1. In the **HTTP response** section, observe the JSON results of the test request.
+
+      ![image16](images/image16.png)
+
+1. Return to your browser window with the Azure portal.
 
 #### Review
 
@@ -358,18 +356,11 @@ In this exercise, you used Azure API Management as a proxy to trigger your Logic
 
 #### Task 2: Delete resource groups
 
-1.  Enter the following command, and then select Enter to delete the **AutomatedWorkflow** resource group:
+1. Enter the following command, and then select Enter to delete the **AutomatedWorkflow** resource group:
 
-    ```
-    az group delete --name AutomatedWorkflow --no-wait --yes
-    ```
+   ```
+   az group delete --name AutomatedWorkflow --no-wait --yes
+   ```
 
-1.  Close the Cloud Shell pane.
 
-#### Task 3: Close the active applications
-
--   Close the currently running Microsoft Edge application.
-
-#### Review
-
-In this exercise, you cleaned up your subscription by removing the resource groups used in this lab.
+![image17](images/image17.png)

@@ -8,36 +8,9 @@ Microsoft updates this training course when the community brings needed changes 
 
 ## Instructions
 
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Sign in to your Windows 10 virtual machine (VM) by using the following credentials:
-
-- Username: **Admin**
-- Password: **Pa55w.rd**
-
-> **Note**: Instructions to connect to the virtual lab environment will be provided by your instructor.
-
-#### Review the installed applications
-
-Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for the applications that you’ll use in this lab:
-
-- Microsoft Edge
-- File Explorer
-- Visual Studio Code
-- Windows PowerShell
-
 ### Exercise 1: Create and configure Azure resources
 
 #### Task 1: Open the Azure portal
-
-1. On the taskbar, select the **Microsoft Edge** icon.
-2. In the open browser window, go to the Azure portal ([https://portal.azure.com](https://portal.azure.com/)).
-3. From the sign-in page, enter the email address for your Microsoft account, and then select **Next**.
-4. Enter the password for your Microsoft account, and then select **Sign in**.
-
-> **Note**: If this is your first time signing in to the Azure portal, a dialog box will display an offer to tour the portal. Select **Get Started** to skip the tour and begin using the portal.
 
 #### Task 2: Create an Application Insights resource
 
@@ -70,6 +43,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
    > **Note**: Wait for the creation task to complete before you move forward with this lab.
 
+   ![image1](images/image1.png)
+
 10. In the Azure portal’s navigation pane, select **Resource groups**.
 
 11. From the **Resource groups** blade, select the **MonitoredAssets** resource group that you created earlier in this lab.
@@ -79,6 +54,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 13. From the **Application Insights** blade, in the **Configure** category, select the **Properties** link.
 
 14. In the **Properties** section, find the value of the **Instrumentation Key** text box. This key is used by client applications to connect to Application Insights.
+
+    ![image2](images/image2.png)
 
 #### Task 3: Create a web app by using Azure App Services resource
 
@@ -99,15 +76,26 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 7. From the **Basics** tab, perform the following actions:
 
    1. Leave the **Subscription** text box set to its default value.
+
    2. In the **Resource group** drop-down list, select **MonitoredAssets**.
+
    3. In the **Name** text box, enter ***smpapi\**\*[yourname]\***.
+
    4. In the **Publish** section, select **Code**.
+
    5. In the **Runtime stack** drop-down list, select **.NET Core 3.1 (LTS)**.
+
    6. In the **Operating System** section, select **Windows**.
+
    7. In the **Region** drop-down list, select the **East US** region.
+
    8. In the **Windows Plan (East US)** section, select **Create new**, enter the value **MonitoredPlan** into the **Name** text box, and then select **OK**.
+
    9. Leave the **SKU and size** section set to its default value.
+
    10. Select **Next: Deployment (Preview)**.
+
+       ![image3](images/image3.png)
 
 8. From the **Deployment (Preview)** tab, perform the following actions:
 
@@ -116,8 +104,12 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 9. From the **Monitoring** tab, perform the following actions:
 
    1. In the **Enable Application Insights** section, select **Yes**.
+
    2. In the **Application Insights** drop-down list, select the **instrm\*[yourname]\*** Application Insights account that you created earlier in this lab.
+
    3. Select **Review + Create**.
+
+      ![image4](images/image4.png)
 
 10. From the **Review + Create** tab, review the options that you selected during the previous steps.
 
@@ -136,12 +128,18 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 16. In the **Configuration** section, perform the following actions:
 
     1. Select the **Application settings** tab.
+
     2. Select **Show Values** to get the secrets associated with your API.
+
     3. Find the value corresponding to the **APPINSIGHTS_INSTRUMENTATIONKEY** key. This value was set automatically when you built your Web Apps resource.
+
+       ![image5](images/image5.png)
 
 17. From the **App Service** blade, in the **Settings** category, select the **Properties** link.
 
 18. In the **Properties** section, record the value of the **URL** text box. You’ll use this value later in the lab to make requests against the API.
+
+    ![image6](images/image6.png)
 
 #### Task 4: Configure web app autoscale options
 
@@ -150,16 +148,28 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 2. In the **Scale out** section, perform the following actions:
 
    1. Select **Custom autoscale**.
+   
+      ![image7](images/image7.png)
+   
    2. In the **Autoscale setting name** text box, enter **ComputeScaler**.
+   
    3. In the **Resource group** list, select **MonitoredAssets**.
+   
    4. In the **Scale mode** section, select **Scale based on a metric**.
-   5. In the **Minimum** text box in the **Instance limits** section, enter **2**.
-   6. In the **Maximum** text box in the **Instance limits** section, enter **8**.
-   7. In the **Default** text box in the **Instance limits** section, enter **3**.
-   8. Select **Add a rule**. In the **Scale rule** pop-up dialog, leave all boxes set to their default values, and then select **Add**.
-   9. Within the section, select **Save**.
 
+   5. In the **Minimum** text box in the **Instance limits** section, enter **2**.
+   
+   6. In the **Maximum** text box in the **Instance limits** section, enter **8**.
+   
+   7. In the **Default** text box in the **Instance limits** section, enter **3**.
+   
+   8. Select **Add a rule**. In the **Scale rule** pop-up dialog, leave all boxes set to their default values, and then select **Add**.
+   
+   9. Within the section, select **Save**.
+   
    > **Note**: Wait for the save operation to complete before you move forward with this lab.
+
+![image8](images/image8.png)
 
 #### Review
 
@@ -195,6 +205,8 @@ In this exercise, you created the resources that you’ll use for the remainder 
 
    > **Note**: The **dotnet add package** command will add the **Microsoft.ApplicationInsights** package from NuGet. For more information, go to [Microsoft.ApplicationInsights](https://www.nuget.org/packages/Microsoft.ApplicationInsights/2.14.0).
 
+   
+
 7. At the command prompt, enter the following command, and then select Enter to import version 2.14.0 of **Microsoft.ApplicationInsights.AspNetCore** from NuGet:
 
    CodeCopy
@@ -204,6 +216,8 @@ In this exercise, you created the resources that you’ll use for the remainder 
    ```
 
    > **Note**: The **dotnet add package** command will add the **Microsoft.ApplicationInsights.AspNetCore** package from NuGet. For more information, go to [Microsoft.ApplicationInsights.AspNetCore](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.14.0).
+
+   
 
 8. At the command prompt, enter the following command, and then select Enter to import version 2.14.0 of **Microsoft.ApplicationInsights.PerfCounterCollector** from NuGet to the current project:
 
@@ -222,6 +236,8 @@ In this exercise, you created the resources that you’ll use for the remainder 
    ```
    dotnet build
    ```
+
+![image9](images/image9.png)
 
 #### Task 2: Update application code to disable HTTPS and use Application Insights
 
@@ -280,6 +296,8 @@ In this exercise, you created the resources that you’ll use for the remainder 
 
 7. Save the **Startup.cs** file.
 
+   ![image10](images/image10.png)
+
 8. At the command prompt, enter the following command, and then select Enter to build the .NET web application.
 
    CodeCopy
@@ -298,6 +316,8 @@ In this exercise, you created the resources that you’ll use for the remainder 
    dotnet run
    ```
 
+   ![image11](images/image11.png)
+
 2. On the taskbar, open the context menu for the **Microsoft Edge** icon, and then open a new browser window.
 
 3. In the open browser window, go to the **/weatherforecast** relative path of your test application that’s hosted at **localhost** on port **5000**.
@@ -307,6 +327,8 @@ In this exercise, you created the resources that you’ll use for the remainder 
 4. Close the browser window that’s displaying the http://localhost:5000/weatherforecast address.
 
 5. Close the currently running Visual Studio Code application.
+
+   ![image12](images/image12.png)
 
 #### Task 4: Get metrics in Application Insights
 
@@ -321,6 +343,8 @@ In this exercise, you created the resources that you’ll use for the remainder 
 5. From the **Application Insights** blade, in the tiles in the center of the blade, find the displayed metrics. Specifically, find the number of server requests that have occurred and the average server response time.
 
    > **Note**: It can take up to five minutes to observe requests in the Application Insights metrics charts.
+
+![image13](images/image13.png)
 
 #### Review
 
@@ -399,6 +423,8 @@ In this exercise, you created an API by using ASP.NET and configured it to strea
 
     > **Note**: Wait for the deployment to complete before you move forward with this lab.
 
+    ![image14](images/image14.png)
+
 13. Close the currently running Visual Studio Code application.
 
 14. Return to your currently open browser window that’s displaying the Azure portal.
@@ -417,6 +443,8 @@ In this exercise, you created an API by using ASP.NET and configured it to strea
 
 20. Find the JavaScript Object Notation (JSON) array that’s returned as a result of using the API.
 
+    ![image15](images/image15.png)
+
 #### Task 2: Configure in-depth metric collection for Web Apps
 
 1. Return to your currently open browser window that’s displaying the Azure portal.
@@ -432,13 +460,22 @@ In this exercise, you created an API by using ASP.NET and configured it to strea
 6. From the **Application Insights** blade, perform the following actions:
 
    1. Ensure that the **Application Insights** section is set to **Enable**.
+
    2. In the **Instrument your application** section, select the **.NET** tab.
+
    3. In the **Collection level** section, select **Recommended**.
+
    4. In the **Profiler** secton, select **On**.
+
    5. In the **Snapshot debugger** section, select **Off**.
+
    6. In the **SQL Commands** section, select **Off**.
+
    7. Select **Apply**.
+
    8. In the confirmation dialog, select **Yes**.
+
+      ![image16](images/image16.png)
 
 7. Close the **Application Insights** blade.
 
@@ -454,6 +491,8 @@ In this exercise, you created an API by using ASP.NET and configured it to strea
 
     > **Note**: Using the example from the previous step, you would record the URL `https://smpapistudent.azurewebsites.net/weatherforecast`.
 
+![image17](images/image17.png)
+
 #### Task 3: Get updated metrics in Application Insights
 
 1. Return to your currently open browser window that’s displaying the Azure portal.
@@ -467,6 +506,8 @@ In this exercise, you created an API by using ASP.NET and configured it to strea
 5. From the **Application Insights** blade, in the tiles in the center of the blade, find the displayed metrics. Specifically, find the number of server requests that have occurred and the average server response time.
 
    > **Note**: It can take up to five minutes to observe requests in the Application Insights metrics charts.
+
+![image18](images/image18.png)
 
 #### Task 4: View real-time metrics in Application Insights
 
@@ -491,6 +532,8 @@ In this exercise, you created an API by using ASP.NET and configured it to strea
 10. Observe the updated **Live Metrics Stream** blade.
 
     > **Note**: The **Incoming Requests** section should update within seconds, showing the requests that you made to the web app.
+
+![image19](images/image19.png)
 
 #### Review
 
@@ -520,13 +563,5 @@ In this exercise, you deployed your web application to Azure App Service and mon
    az group delete --name MonitoredAssets --no-wait --yes
    ```
 
-2. Close the Cloud Shell pane in the portal.
+   ![image20](images/image20.png)
 
-#### Task 3: Close the active applications
-
-1. Close the currently running Microsoft Edge application.
-2. Close the currently running Visual Studio Code application.
-
-#### Review
-
-In this exercise, you cleaned up your subscription by removing the resource groups used in this lab.

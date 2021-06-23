@@ -8,24 +8,6 @@ Microsoft updates this training course when the community brings needed changes 
 
 ## Instructions
 
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Sign in to your Windows 10 virtual machine (VM) using the following credentials:
-
-- Username: **Admin**
-- Password: **Pa55w.rd**
-
-> **Note**: Instructions to connect to the virtual lab environment will be provided by your instructor.
-
-#### Review the installed applications
-
-Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for the applications that you’ll use in this lab:
-
-- Microsoft Edge
-- Microsoft Visual Studio Code
-
 ### Exercise 1: Create Azure resources
 
 #### Task 1: Open the Azure portal
@@ -115,13 +97,23 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 6. On the **Create Topic** blade, perform the following actions:
 
    1. In the **Name** text box, enter **hrtopic\*[yourname]\***.
+   
    2. In the **Resource group** section, select **Create new**, enter **PubSubEvents**, and then select **OK**.
+   
    3. From the **Location** drop-down list, select the **(US) East US** region.
-   4. Select the **Advanced** tab.
-   5. From the **Event Schema** drop-down list, select **Event Grid Schema**.
-   6. Select **Review + Create**.
-   7. **Create**.
+   
+      ![image1](images/image1.png)
 
+   4. Select the **Advanced** tab.
+   
+   5. From the **Event Schema** drop-down list, select **Event Grid Schema**.
+   
+   6. Select **Review + Create**.
+   
+      ![image2](images/image2.png)
+   
+   7. **Create**.
+   
    > **Note**: Wait for Azure to finish creating the topic before you continue with the lab. You’ll receive a notification when the topic is created.
 
 #### Task 5: Deploy the Azure Event Grid viewer to a web app
@@ -143,15 +135,26 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 7. On the **Basics** tab, perform the following actions:
 
    1. Leave the **Subscription** text box set to its default value.
+
    2. In the **Resource group** section, select **PubSubEvents**.
+
    3. In the **Name** text box, enter **eventviewer\*[yourname]\***.
+
    4. In the **Publish** section, select **Docker Container**.
+
    5. In the **Operating System** section, select **Linux**.
+
    6. From the **Region** drop-down list, select the **East US** region.
+
    7. In the **Linux Plan (East US)** section, select **Create new**.
+
    8. In the **Name** text box, enter the value **EventPlan**, and then select **OK**.
+
    9. Leave the **SKU and size** section set to its default value.
+
    10. Select **Next: Docker**.
+
+       ![image3](images/image3.png)
 
 8. On the **Docker** tab, perform the following actions:
 
@@ -166,6 +169,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 10. Select **Create** to create the web app using your specified configuration.
 
     > **Note**: Wait for Azure to finish creating the web app before you continue with the lab. You’ll receive a notification when the app is created.
+
+![image4](images/image4.png)
 
 #### Review
 
@@ -185,6 +190,8 @@ In this exercise, you created the Event Grid topic and a web app that you will u
 
 5. In the **Properties** section, record the value of the **URL** text box. You’ll use this value later in the lab.
 
+   ![image5](images/image5.png)
+
 6. Select **Overview**.
 
 7. In the **Overview** section, select **Browse**.
@@ -192,6 +199,8 @@ In this exercise, you created the Event Grid topic and a web app that you will u
 8. Observe the currently running **Azure Event Grid viewer** web application. Leave this web application running for the remainder of the lab.
 
    > **Note**: This web application will update in real-time as events are sent to its endpoint. We will use this to monitor events throughout the lab.
+
+   ![image8](images/image8.png)
 
 9. Return to your currently open browser window that’s displaying the Azure portal.
 
@@ -204,6 +213,8 @@ In this exercise, you created the Event Grid topic and a web app that you will u
 3. On the **PubSubEvents** blade, select the **hrtopic\*[yourname]\*** Event Grid topic that you created earlier in this lab.
 
 4. On the **Event Grid Topic** blade, select **+ Event Subscription**.
+
+   ![image6](images/image6.png)
 
 5. On the **Create Event Subscription** blade, perform the following actions:
 
@@ -223,6 +234,8 @@ In this exercise, you created the Event Grid topic and a web app that you will u
 
    > **Note**: Wait for Azure to finish creating the subscription before you continue with the lab. You’ll receive a notification when the subscription is created.
 
+![image7](images/image7.png)
+
 #### Task 3: Observe the subscription validation event
 
 1. Return to the browser window displaying the **Azure Event Grid viewer** web application.
@@ -233,11 +246,20 @@ In this exercise, you created the Event Grid topic and a web app that you will u
 #### Task 4: Record subscription credentials
 
 1. In the Azure portal’s navigation pane, select **Resource groups**.
+
 2. On the **Resource groups** blade, select the **PubSubEvents** resource group that you created earlier in this lab.
+
 3. On the **PubSubEvents** blade, select the **hrtopic\*[yourname]\*** Event Grid topic that you created earlier in this lab.
+
 4. On the **Event Grid Topic** blade, record the value of the **Topic Endpoint** field. You’ll use this value later in the lab.
+
+   ![image9](images/image9.png)
+
 5. In the **Settings** category, select the **Access keys** link.
+
 6. In the **Access keys** section, record the value of the **Key 1** text box. You’ll use this value later in the lab.
+
+   ![image10](images/image10.png)
 
 #### Review
 
@@ -252,6 +274,8 @@ In this exercise, you created a new subscription, validated its registration, an
 2. From the **File** menu, select **Open Folder**.
 
 3. In the **File Explorer** window that opens, browse to **Allfiles (F):\Allfiles\Labs\09\Starter\EventPublisher**, and then select **Select Folder**.
+
+   ![image11](images/image11.png)
 
 4. In the **Visual Studio Code** window, right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
 
@@ -275,6 +299,8 @@ In this exercise, you created a new subscription, validated its registration, an
 
    > **Note**: The **dotnet add package** command will add the **Microsoft.Azure.EventGrid** package from NuGet. For more information, go to [Azure.Messaging.EventGrid](https://www.nuget.org/packages/Azure.Messaging.EventGrid/4.1.0).
 
+   ![image12](images/image12.png)
+
 7. At the command prompt, enter the following command, and then select Enter to build the .NET web application:
 
    CodeCopy
@@ -284,6 +310,8 @@ In this exercise, you created a new subscription, validated its registration, an
    ```
 
 8. Select **Kill Terminal** or the **Recycle Bin** icon to close the currently open terminal and any associated processes.
+
+   ![image13](images/image13.png)
 
 #### Task 2: Modify the Program class to connect to Event Grid
 
@@ -369,6 +397,8 @@ In this exercise, you created a new subscription, validated its registration, an
          }
      }
     ```
+
+![image14](images/image14.png)
 
 #### Task 3: Publish new events
 
@@ -507,6 +537,8 @@ In this exercise, you created a new subscription, validated its registration, an
 
 3. Save the **Program.cs** file.
 
+   ![image15](images/image15.png)
+
 4. In the **Visual Studio Code** window, right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
 
 5. At the open command prompt, enter the following command, and then select Enter to run the .NET web application:
@@ -534,37 +566,4 @@ In this exercise, you created a new subscription, validated its registration, an
 
 In this exercise, you published new events to your Event Grid topic using a .NET console application.
 
-### Exercise 4: Clean up your subscription
-
-#### Task 1: Open Azure Cloud Shell
-
-1. In Azure portal, select the **Cloud Shell** icon to open a new shell instance.
-
-   > **Note**: The **Cloud Shell** icon is represented by a greater than sign (>) and underscore character (_).
-
-2. If this is your first time opening Cloud Shell using your subscription, you can use the **Welcome to Azure Cloud Shell Wizard** to configure Cloud Shell for first-time usage. Perform the following actions in the wizard:
-
-   1. A dialog box prompts you to configure the shell. Select **Bash**, review the selected subscription, and then select **Create storage**.
-
-   > **Note**: Wait for Cloud Shell to finish its initial setup procedures before moving forward with the lab. If you don’t notice the Cloud Shell configuration options, this is most likely because you’re using an existing subscription with this course’s labs. The labs are written with the presumption that you’re using a new subscription.
-
-#### Task 2: Delete resource groups
-
-1. Enter the following command, and then select Enter to delete the **PubSubEvents** resource group:
-
-   CodeCopy
-
-   ```bash
-    az group delete --name PubSubEvents --no-wait --yes
-   ```
-
-2. Close the Cloud Shell pane in the portal.
-
-#### Task 3: Close the active applications
-
-1. Close the currently running Microsoft Edge application.
-2. Close the currently running Visual Studio Code application.
-
-#### Review
-
-In this exercise, you cleaned up your subscription by removing the resource groups used in this lab.
+![image16](images/image16.png)

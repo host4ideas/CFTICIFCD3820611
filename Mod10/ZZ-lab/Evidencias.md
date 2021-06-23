@@ -8,38 +8,9 @@ Microsoft updates this training course when the community brings needed changes 
 
 ## Instructions
 
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Sign in to your Windows 10 virtual machine (VM) by using the following credentials:
-
-- Username: **Admin**
-- Password: **Pa55w.rd**
-
-> **Note**: Instructions to connect to the virtual lab environment will be provided by your instructor.
-
-#### Review the installed applications
-
-Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for the applications that you'll use in this lab:
-
-- Microsoft Edge
-- Visual Studio Code
-- Azure Storage Explorer
-
 ### Exercise 1: Create Azure resources
 
 #### Task 1: Open the Azure portal
-
-1. On the taskbar, select the **Microsoft Edge** icon.
-
-2. In the open browser window, go to the Azure portal ([https://portal.azure.com](https://portal.azure.com/)).
-
-3. Enter the email address for your Microsoft account, and then select **Next**.
-
-4. Enter the password for your Microsoft account, and then select **Sign in**.
-
-   > **Note**: If this is your first time signing in to the Azure portal, you'll be offered a tour of the portal. Select **Get Started** to skip the tour and begin using the portal.
 
 #### Task 2: Create a Storage account
 

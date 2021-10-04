@@ -26,25 +26,25 @@
 | Mod 06          | 1    | [Register an app with the Microsoft Identity platform](Mod06/01_demo/Evidencias.md)|      |
 | Mod 06          | 2    | [Interactive authentication by using MSAL.NET](Mod06/02_demo/Evidencias.md)|      |
 | Mod 06          | 3    | [Retrieving profile information by using the Microsoft Graph SDK](Mod06/03_demo/Evidencias.md)|      |
-| Mod 07          | 1    | [Set and retrieve a secret from Azure Key  Vault by using Azure CLI](Mod07/01_demo/Evidencias.md)|      |
+| Mod 07          | 1    | Set and retrieve a secret from Azure Key  Vault by using Azure CLI|      |
 | Mod 08          | 1    | [Create an APIM instance by using Azure CLI](Mod08/01_demo/Evidencias.md)|      |
-| Mod 08          | 2    | [Import an API by using the Azure Portal](Mod08/02_demo/Evidencias.md)|      |
-| Mod 08          | 3    | [Create and publish a product](Mod08/03_demo/Evidencias.md)|      |
-| Mod 08          | 4    | [Transform your API by using policies](Mod08/04_demo/Evidencias.md)|      |
+| Mod 08          | 2    | Import an API by using the Azure Portal|      |
+| Mod 08          | 3    | Create and publish a product|      |
+| Mod 08          | 4    | Transform your API by using policies|      |
 | Mod 09          | 1    | [Create a Logic App using the Azure Portal](Mod09/01_demo/Evidencias.md)|      |
 | Mod 10:         | 1    | [Route custom events to web endpoint by using the Azure CLI commands and Event Grid](Mod10/01_demo/Evidencias.md)|      |
 | Mod 11:         | 1    | [Use .NET Core to send and receive messages  from a Service Bus queue](Mod11/01_demo/Evidencias.md)|      |
 | Mod 12:         | 1    | [Instrument an ASP.NET Core app for  monitoring in Application Insights](Mod11/02_demo/Evidencias.md)|      |
 | Mod 13:         | 1    | [Connect an app to Azure Cache for Redis by  using .NET Core](Mod11/03_demo/Evidencias.md)|      |
-| Lab 01          | 1    | [Lab 01: Building a web application on Azure platform as a service offerings](Mod01/ZZ-lab/AZ-204_01_lab_ak.md)|      |
-| Lab 02          | 1    | [Lab 02: Implement task processing logic by using Azure Functions](Mod02/ZZ-lab/AZ-204_02_lab_ak.md)|      |
-| Lab 03          | 1    | [Lab 03: Retrieving Azure Storage resources and metadata by using the Azure Storage SDK for .NET](Mod03/ZZ-lab/AZ-204_03_lab_ak.md)|      |
-| Lab 04          | 1    | [Lab 04: Constructing a polyglot data solution](Mod04/ZZ-lab/AZ-204_04_lab_ak.md)|      |
-| Lab 05          | 1    | [Lab 05: Deploying compute workloads by using images and containers](Mod05/ZZ-lab/AZ-204_05_lab_ak.md)|      |
-| Lab 06          | 1    | [Lab 06: Authenticating to and querying Microsoft Graph by using MSAL and .NET SDKs](Mod06/ZZ-lab/AZ-204_06_lab_ak.md)|      |
-| Lab 07          | 1    | [Lab 07: Access resource secrets more securely across services](Mod07/ZZ-lab/AZ-204_07_lab_ak.md)|      |
-| Lab 08          | 1    | [Lab 08: Creating a multi-tier solution by using services in Azure](Mod08/ZZ-lab/AZ-204_08_lab_ak.md)|      |
-| Lab 09          | 1    | [Lab 09: Publishing and subscribing to Event Grid events](Mod09/ZZ-lab/AZ-204_09_lab_ak.md)|      |
-| Lab 10          | 1    | [Lab 10: Asynchronously processing messages by using Azure Queue Storage](Mod10/ZZ-lab/AZ-204_10_lab_ak.md)|      |
-| Lab 11          | 1    | [Lab 11: Monitoring services that are deployed to Azure](Mod11/ZZ-lab/AZ-204_11_lab_ak.md)|      |
-| Lab 12          | 1    | [Lab 12: Enhancing a web application by using the Azure Content Delivery Network](Mod12/ZZ-lab/AZ-204_12_lab_ak.md)|      |
+| Lab 01          | 1    | [Lab 01: Building a web application on Azure platform as a service offerings](Mod01/ZZ-lab/Evidencias.md)|      |
+| Lab 02          | 1    | [Lab 02: Implement task processing logic by using Azure Functions](Mod02/ZZ-lab/Evidencias.md)|      |
+| Lab 03          | 1    | [Lab 03: Retrieving Azure Storage resources and metadata by using the Azure Storage SDK for .NET](Mod03/ZZ-lab/Evidencias.md)|      |
+| Lab 04          | 1    | [Lab 04: Constructing a polyglot data solution](Mod04/ZZ-lab/Evidencias.md)|      |
+| Lab 05          | 1    | [Lab 05: Deploying compute workloads by using images and containers](Mod05/ZZ-lab/Evidencias.md)|      |
+| Lab 06          | 1    | [Lab 06: Authenticating to and querying Microsoft Graph by using MSAL and .NET SDKs](Mod06/ZZ-lab/Evidencias.md)|      |
+| Lab 07          | 1    | [Lab 07: Access resource secrets more securely across services](Mod07/ZZ-lab/Evidencias.md)|      |
+| Lab 08          | 1    | [Lab 08: Creating a multi-tier solution by using services in Azure](Mod08/ZZ-lab/Evidencias.md)|      |
+| Lab 09          | 1    | [Lab 09: Publishing and subscribing to Event Grid events](Mod09/ZZ-lab/Evidencias.md)|      |
+| Lab 10          | 1    | [Lab 10: Asynchronously processing messages by using Azure Queue Storage](Mod10/ZZ-lab/Evidencias.md)|      |
+| Lab 11          | 1    | [Lab 11: Monitoring services that are deployed to Azure](Mod11/ZZ-lab/Evidencias.md)|      |
+| Lab 12          | 1    | [Lab 12: Enhancing a web application by using the Azure Content Delivery Network](Mod12/ZZ-lab/Evidencias.md)|      |
